@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Torso torso;
+    public Head head;
     public Arm armOne;
     public Arm armTwo;
 
@@ -28,7 +30,12 @@ public class Player : MonoBehaviour
         {
             if(part.IsPressed(part.inputButton))
             {
-                part.MovePart(Input.mousePosition);
+                part.MovePart();
+            }
+            else
+            {
+                torso.MovePart();
+                head.MovePart();
             }
         }
     }
