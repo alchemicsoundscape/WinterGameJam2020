@@ -5,15 +5,17 @@ using UnityEngine;
 public class Head : BodyPart
 {
 
-    // Start is called before the first frame update
-    void Start()
+    public void MovePart()
     {
+        if(Input.GetButton("Head"))
+        {
+            Debug.Log("detected");
+            Vector2 distance = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            
+            float sign = (Camera.main.ScreenToWorldPoint(Input.mousePosition).y < transform.position.y)? -1.0f : 1.0f;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+            var finalRotation = Vector2.Angle(Vector2.right, distance) * sign;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, finalRotation);
+        }
     }
 }
