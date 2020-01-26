@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BodyPart : MonoBehaviour
 {
+    public Transform farthestPoint;
     public Sprite image;
     public string inputButton;
     // Start is called before the first frame update
@@ -15,6 +16,8 @@ public class BodyPart : MonoBehaviour
 
     public void MovePart(Vector3 position)
     {
+        // Debug.Log(farthestPoint.position);
+        Debug.Log(Vector3.Distance(Camera.main.ScreenToWorldPoint(position), transform.position));
         Vector2 distance = Camera.main.ScreenToWorldPoint(position) - transform.position;
         
         float sign = (Camera.main.ScreenToWorldPoint(position).y < transform.position.y)? -1.0f : 1.0f;
