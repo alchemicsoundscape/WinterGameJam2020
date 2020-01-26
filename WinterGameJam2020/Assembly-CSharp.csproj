@@ -51,6 +51,7 @@
      <Compile Include="Assets\scripts\InputController.cs" />
      <Compile Include="Assets\scripts\Leg.cs" />
      <Compile Include="Assets\scripts\Player.cs" />
+     <Compile Include="Assets\scripts\TranslateWall.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/alche/OneDrive/Documents/WinterGamejam2020/WinterGameJam2020/WinterGameJam2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
